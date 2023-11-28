@@ -1,0 +1,13 @@
+name: autodeployer
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  deploying:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: cd autodeploy_nuxt
+      - run: npm run generate -y
