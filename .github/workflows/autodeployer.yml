@@ -17,6 +17,7 @@ jobs:
       - run: yarn install
       - run: npm run generate -y
   push:
+    runs-on: ubuntu-latest
     needs: compiling
     steps:
       - run: git add -A
