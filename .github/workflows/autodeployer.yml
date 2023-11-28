@@ -20,6 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: compiling
     steps:
+      - uses: actions/checkout@v3
       - run: git add -A
       - run: git config --global user.email "ci@rie_amasato"
       - run: git config --global user.name "Amasato CI"
