@@ -17,5 +17,7 @@ jobs:
       - run: yarn install
       - run: npm run generate -y
       - run: git add .
-      - run: git commit -m "auto deployer's push" || echo no commits
+      - run: git config --global user.email "ci@rie_amasato"
+      - run: git config --global user.name "Amasato CI"
+      - run: git commit -m "auto deployer's push"
       - run: git push
