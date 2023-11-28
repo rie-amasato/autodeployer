@@ -10,4 +10,5 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: cd autodeployer
+      - run: yarn install
       - run: npm run generate -y
