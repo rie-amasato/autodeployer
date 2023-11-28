@@ -18,10 +18,6 @@ jobs:
       - run: npm run generate -y
   push:
     needs: compiling
-    runs-on: ubuntu-latest
-    defaults:
-      run: 
-        working-directory: ./autodeployer
     steps:
       - run: git add -A
       - run: git config --global user.email "ci@rie_amasato"
