@@ -3,7 +3,7 @@
     <div>
       <app-logo/>
       <h1 class="title">
-        autodeployer_test
+        これは自動デプロイのテスト
       </h1>
       <h2 class="subtitle">
         Nuxt.js project
