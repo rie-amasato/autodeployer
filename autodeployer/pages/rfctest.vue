@@ -27,7 +27,7 @@ export default{
                 reader.addEventListener("reading", (e)=>{
                     console.log("READING")
                     const ndefmessage=e.message
-                    this.rfctest+=`Succeed: ${ndefmessage.records}-${e.serialNumber}`
+                    this.rfctest+=`Succeed: ${ndefmessage.records[0].data}-${ndefmessage.records[0].encoding}-${e.serialNumber}`
                 })
             }catch(e){
                 console.log("CATCH",e)
