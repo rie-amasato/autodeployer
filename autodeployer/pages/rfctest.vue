@@ -24,7 +24,7 @@ export default{
                 console.log(reader)
                 reader.addEventListener("readingerror", ()=>{this.rfctest="えらー"})
 
-                reader.addEventListener("reading", (message, serialNumber)=>{
+                reader.addEventListener("onreading", (message, serialNumber)=>{
                     console.log("READING")
                     this.rfctest=`${message}-${serialNumber}`
                 })
