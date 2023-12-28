@@ -22,7 +22,7 @@ export default{
                 await reader.scan()
 
                 console.log(reader)
-                reader.addEventListener("readingerror", (e)=>{this.rfctest+=`えらー: ${e}`})
+                reader.addEventListener("readingerror", (e)=>{this.rfctest+=`えらー: type: ${e.type}`})
 
                 reader.addEventListener("reading", (e)=>{
                     console.log("READING")
