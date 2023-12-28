@@ -24,9 +24,9 @@ export default{
                 console.log("READING")
                 this.rfctest=`${message}-${serialNumber}`
             })
-        }catch{
-            console.log("CATCH")
-            this.rfctest="きゃっち"
+        }catch(e){
+            console.log("CATCH",e)
+            this.rfctest=`きゃっち-${e}`
         }
     }
 }
