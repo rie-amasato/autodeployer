@@ -22,15 +22,15 @@ export default{
                 await reader.scan()
 
                 console.log(reader)
-                reader.addEventListener("readingerror", ()=>{this.rfctest="えらー"})
+                reader.addEventListener("readingerror", ()=>{this.rfctest+="えらー"})
 
                 reader.addEventListener("onreading", (message, serialNumber)=>{
                     console.log("READING")
-                    this.rfctest=`${message}-${serialNumber}`
+                    this.rfctest+=`${message}-${serialNumber}`
                 })
             }catch(e){
                 console.log("CATCH",e)
-                this.rfctest=`きゃっち-${e}`
+                this.rfctest+=`きゃっち-${e}`
             }
         }
     }
