@@ -29,11 +29,12 @@ export default{
                     const ndefmessage=e.message
                     this.rfctest+=`Succeed: ${e.serialNumber}`
                     
-                    this.rfctest+=ndefmessage.records.length
+                    this.rfctest+=` length: ${ndefmessage.records.length}`
                     
-                    for(record of ndefmessage.records){
+                    //for(record of ndefmessage.records){
+                        const record=ndefmessage.records[0]
                         this.rfctest+=`\n{recodtype: ${record.recordtype}, mediatype: ${record.mediatype}, id: ${record.id}, data: ${record.data}, encoding: ${record.encoding}, lang: ${record.lng}}\n`
-                    }
+                    //}
                 })
             }catch(e){
                 console.log("CATCH",e)
