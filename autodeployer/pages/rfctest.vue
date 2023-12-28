@@ -1,5 +1,8 @@
 <template>
-    <div>{{rfctest}}</div>
+    <div>
+    <div @click="click_scanstart">Start_Scan</div>
+    {{rfctest}}
+    </div>
 </template>
 
 <script>
@@ -9,24 +12,26 @@ export default{
             rfctest: "てすと"
         }
     },
-    async mounted(){
-        try{
-            console.log("TRY")
-            this.rfctest="mounted"
-            const reader=new NDEFReader()
+    methods: {
+        async click_scanstart(){
+            try{
+                console.log("TRY")
+                this.rfctest="mounted"
+                const reader=new NDEFReader()
 
-            await reader.scan()
+                await reader.scan()
 
-            console.log(reader)
-            reader.addEventListener("error", ()=>{this.rfctest="えらー"})
+                console.log(reader)
+                reader.addEventListener("readingerror", ()=>{this.rfctest="えらー"})
 
-            reader.addEventListener("reading", (message, serialNumber)=>{
-                console.log("READING")
-                this.rfctest=`${message}-${serialNumber}`
-            })
-        }catch(e){
-            console.log("CATCH",e)
-            this.rfctest=`きゃっち-${e}`
+                reader.addEventListener("reading", (message, serialNumber)=>{
+                    console.log("READING")
+                    this.rfctest=`${message}-${serialNumber}`
+                })
+            }catch(e){
+                console.log("CATCH",e)
+                this.rfctest=`きゃっち-${e}`
+            }
         }
     }
 }
