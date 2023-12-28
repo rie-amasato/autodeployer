@@ -22,9 +22,9 @@ export default{
                 await reader.scan()
 
                 console.log(reader)
-                reader.addEventListener("onreadingerror", (e)=>{this.rfctest+=`えらー-${e}`})
+                reader.addEventListener("readingerror", (e)=>{this.rfctest+=`えらー-${e}`})
 
-                reader.addEventListener("onreading", (message, serialNumber)=>{
+                reader.addEventListener("reading", (message, serialNumber)=>{
                     console.log("READING")
                     this.rfctest+=`${message}-${serialNumber}`
                 })
